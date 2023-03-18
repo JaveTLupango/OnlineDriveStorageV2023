@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^verify/(.*) files/emailverification.php?id=$1 [QSA,L]
+RewriteRule ^file_uploads/([a-z0-9]+) files/index.php?reqUrl=$1
+RewriteRule ^file_uploads files/index.php?reqUrl=pagenotfound
+RewriteRule ^file_uploads/ files/index.php?reqUrl=file
+RewriteRule ^file_downloads/([a-z0-9]+)/([a-z0-9]+) files/index.php?reqUrl=$1&&fid=$2
