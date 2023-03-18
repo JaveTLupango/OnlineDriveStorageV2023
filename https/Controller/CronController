@@ -1,0 +1,33 @@
+<?php
+
+class CronController
+{
+    function updateFile($conn)
+    {
+       // session_start();
+        try {
+            $sql = "UPDATE `file_server` SET timeDuration = timeDuration - 1 WHERE userid = '' ";
+            $stmt = $conn->query($sql)->fetchAll();
+		    return  $stmt;
+        }
+		catch (Exception $e)
+		{			
+			return "Failed to login " .$e->getMessage();
+		}
+    }
+
+    function getListofFileOverDue($conn)
+    {
+        try {
+            $sql = "SELECT * FROM `file_server` WHERE timeDuration = 0";
+            $stmt = $conn->query($sql)->fetchAll();
+		    return  $stmt;
+        }
+		catch (Exception $e)
+		{			
+			return "Failed " .$e->getMessage();
+		}
+    }
+
+
+}
