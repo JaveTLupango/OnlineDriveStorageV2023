@@ -90,6 +90,10 @@ if(strtoupper($data) === "DOWNLOAD" && strtoupper($data) === "LINK")
       elseif(strtoupper($data) === "PROFILE")
       {
         include 'layout/profile.view.php';
+      }
+      elseif(strtoupper($data) === "ADS")
+      {
+        include 'layout/ads.view.php';
       }else
       {
         include 'layout/data_file.view.php';

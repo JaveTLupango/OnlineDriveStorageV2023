@@ -51,37 +51,19 @@ echo $asidebar;
     </p>
   </a>
 </li>
-<!-- 
-<li class="nav-item has-treeview">
-  <a href="#" class="nav-link">
-    <i class="nav-icon fas fa-share"></i>
-    <p>
-      Shared
-      <i class="fas fa-angle-left right"></i>
-      <span class="badge badge-info right">2</span>
-    </p>
-  </a>
-  <ul class="nav nav-treeview">
-    <li class="nav-item">
-      <a href="sharedfile" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Shared File</p>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a href="filelinkedus" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>File Linked Us</p>
-      </a>
-    </li>
-  </ul>
-</li> -->
-
 <li class="nav-item has-treeview">
   <a href="<?php echo $url.'file_uploads/trash'?>" class="nav-link">
     <i class="nav-icon fas fa-trash"></i>
     <p>
       Trash file
+    </p>
+  </a>
+</li>
+<li class="nav-item has-treeview">
+  <a href="<?php echo $url.'file_uploads/ads'?>" class="nav-link">
+    <i class="nav-icon fas fa-trash"></i>
+    <p>
+      Ads Settings
     </p>
   </a>
 </li>
@@ -164,18 +146,16 @@ else
           </li>
        </ul>  
           <ul>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5125544300826919"
-              crossorigin="anonymous"></script>
-          <!-- OnlineDrive Ads1 -->
-          <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-5125544300826919"
-              data-ad-slot="8211268568"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
-          <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+          <?php 
+          
+              $fAdsV = $url."ads/vertical.txt";
+              $fileV = fopen($fAdsV, "r");
+              while(!feof($fileV)) {
+                $lineV = fgets($fileV);
+                echo $lineV . "<br>";
+              }
+              fclose($fileV);
+          ?>
           </ul>
         </nav> </div>     </aside> 
 <?php
