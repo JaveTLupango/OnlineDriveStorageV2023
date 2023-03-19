@@ -4,6 +4,64 @@
   }
 
   </style>
+  
+<section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Vertical Ads</h3>
+              </div>              
+              <div class="card-deck">
+                <div class="card">                  
+                  <div class="card-body">  
+                    <form action="" method="post">
+                            <textarea class="form-control" name="Ads">
+                                <?php
+                                    $fileAdsName = $url."ads.txt";
+                                    $fileAdsName = fopen($fileAdsName, "r");
+                                    while(!feof($fileAdsName)) {
+                                    $line = fgets($fileAdsName);      
+                                    echo   trim($line);                       
+                                    }
+                                    fclose($fileAdsName);
+                            ?>  
+                                </textarea>  <br >
+                                <input type="submit" name="Save" class="btn btn-primary" >  
+                            <?php
+                                if(isset($_POST["Ads"]))
+                                {
+                                    $myfile = fopen("../ads.txt", "w") or die("Unable to open file!");
+                                    $txt = $_POST["Ads"];
+                                    fwrite($myfile, $txt);
+                                    fclose($myfile);                                   
+                                }
+                            ?>
+                        </form>
+                  </div>
+                </div>
+                <div class="card">                  
+                  <div class="card-body">
+                  <?php
+                                $fileAdsName = $url."ads/horizontal.txt";
+                                $file = fopen($fileAdsName, "r");
+                                while(!feof($file)) {
+                                  $line = fgets($file);
+                                  echo $line . "<br>";
+                                }
+                                fclose($file);
+                           ?>
+                  </div>
+                </div>
+              </div>
+            
+            </div> 
+          </div>          
+        </div>
+      </div>
+</section> 
+
 <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -60,7 +118,6 @@
         </div>
       </div>
 </section> 
-
 
 <section class="content">
       <div class="container-fluid">
@@ -119,7 +176,6 @@
       </div>
 </section> 
 
-
 <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -176,7 +232,6 @@
         </div>
       </div>
 </section> 
-
 
 <section class="content">
       <div class="container-fluid">
