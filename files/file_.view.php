@@ -90,6 +90,18 @@ if(strtoupper($data) === "DOWNLOAD" && strtoupper($data) === "LINK")
       elseif(strtoupper($data) === "PROFILE")
       {
         include 'layout/profile.view.php';
+      }
+      elseif(strtoupper($data) === "ADS")
+      {
+        if($varUserType == 1)
+        {
+          include 'layout/ads.view.php';
+        }
+        else
+        {
+          include 'layout/pagenotfound.view.php';
+        }
+        
       }else
       {
         include 'layout/data_file.view.php';

@@ -71,7 +71,7 @@
       }
 
       function func_RegisterBtn()
-      { debugger;
+      {
         _("register").setAttribute("hidden","hidden");
         _("registerloader").removeAttribute("hidden","hidden");
         var fullName = _("fullName").value;
@@ -152,7 +152,6 @@
                     },
                     success:function(a)
                     {
-                      debugger;
                       if(a == "success")
                       {
                         Swal.fire({
