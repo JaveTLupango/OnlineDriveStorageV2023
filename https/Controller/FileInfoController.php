@@ -73,4 +73,14 @@ class FileInfoController
 		array_push($data,$user);	
 		return $data[0]["".$val1.""];  
     }
+    function getUserRole($conn, $sql, $val1)
+    {
+        //$sql = "SELECT sum(filesize) as filesize FROM `file_server` WHERE userid = 'FU2021941630764928'";
+        $stmt = $conn->prepare($sql);
+		$stmt->execute([$val1]); 
+		$user = $stmt->fetch();
+		$data = array();
+		array_push($data,$user);	
+		return $data[0]["".$val1.""];  
+    }
 }

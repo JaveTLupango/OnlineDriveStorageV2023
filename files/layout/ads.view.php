@@ -28,7 +28,7 @@
                                     fclose($fileAdsName);
                             ?>  
                                 </textarea>  <br >
-                                <input type="submit" name="Save" class="btn btn-primary" >  
+                                <input type="submit" name="Save" class="btn btn-primary" value="Save" >  
                             <?php
                                 if(isset($_POST["Ads"]))
                                 {
@@ -61,7 +61,6 @@
         </div>
       </div>
 </section> 
-
 <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -85,7 +84,7 @@
                                     fclose($fileAdsName);
                             ?>  
                                 </textarea>  <br >
-                                <input type="submit" name="Save" class="btn btn-primary" >  
+                                <input type="submit" name="Save" class="btn btn-primary" value="Save">  
                             <?php
                                 if(isset($_POST["VerticalAds"]))
                                 {
@@ -118,7 +117,6 @@
         </div>
       </div>
 </section> 
-
 <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -142,7 +140,7 @@
                                     fclose($fileAdsName);
                             ?>  
                                 </textarea>  <br >
-                                <input type="submit" name="Save" class="btn btn-primary" >  
+                                <input type="submit" name="Save" class="btn btn-primary" value="Save">  
                             <?php
                                 if(isset($_POST["horizontalAds"]))
                                 {
@@ -175,7 +173,6 @@
         </div>
       </div>
 </section> 
-
 <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -199,7 +196,7 @@
                                     fclose($fileAdsName);
                             ?>  
                                 </textarea>  <br >
-                                <input type="submit" name="Save" class="btn btn-primary" >  
+                                <input type="submit" name="Save" class="btn btn-primary" value="Save" >  
                             <?php
                                 if(isset($_POST["squareAds"]))
                                 {
@@ -232,7 +229,6 @@
         </div>
       </div>
 </section> 
-
 <section class="content">
       <div class="container-fluid">
         <div class="row">

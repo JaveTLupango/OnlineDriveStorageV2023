@@ -59,14 +59,21 @@ echo $asidebar;
     </p>
   </a>
 </li>
-<li class="nav-item has-treeview">
-  <a href="<?php echo $url.'file_uploads/ads'?>" class="nav-link">
-    <i class="nav-icon fas fa-trash"></i>
-    <p>
-      Ads Settings
-    </p>
-  </a>
-</li>
+<?php
+    $varUserType = $C_FIC->getUserTotalFileUpdateSize($conn, "Select usertype FROM file_users WHERE userid = '".$_SESSION['userid']."'", "usertype");
+    if($varUserType == 1)
+    { ?>
+        <li class="nav-item has-treeview">
+        <a href="<?php echo $url.'file_uploads/ads'?>" class="nav-link">
+          <i class="nav-icon fas fa-trash"></i>
+          <p>
+            Ads Settings
+          </p>
+        </a>
+      </li>
+<?php
+    }
+?>
 <!-- 
 <li class="user-panel nav-item has-treeview">
   <a href="<?php echo $url.'file_uploads/settings'?>" class="nav-link">
