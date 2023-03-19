@@ -110,22 +110,30 @@
                 <h3 class="card-title">Advertisement</h3>
               </div>
               <div class="card-body">
-                   <div class=" col-12">
-                        <div class="thumbnail thumbnail-downloadimage">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5125544300826919"
-                                crossorigin="anonymous"></script>
-                            <!-- OnlineDrive Ads -->
-                            <ins class="adsbygoogle"
-                                style="display:block"
-                                data-ad-client="ca-pub-5125544300826919"
-                                data-ad-slot="3916800339"
-                                data-ad-format="auto"
-                                data-full-width-responsive="true"></ins>
-                            <script>
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
-                   </div>
+              <div class="row">
+                    <div class=" col-6">
+                            <?php
+                                    $fileAdsName = $url."ads/horizontal.txt";
+                                    $file = fopen($fileAdsName, "r");
+                                    while(!feof($file)) {
+                                      $line = fgets($file);
+                                      echo $line . "<br>";
+                                    }
+                                    fclose($file);
+                              ?>
+                    </div>
+                    <div class=" col-6">
+                            <?php
+                                    $fileAdsName = $url."ads/horizontal.txt";
+                                    $file = fopen($fileAdsName, "r");
+                                    while(!feof($file)) {
+                                      $line = fgets($file);
+                                      echo $line . "<br>";
+                                    }
+                                    fclose($file);
+                              ?>
+                    </div>
+                </div> 
               </div>
             </div>
           </div>

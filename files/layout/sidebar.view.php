@@ -120,19 +120,16 @@ echo $asidebar;
   </a>
 </li>  
 <?php
-echo ' </ul>'
-?>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5125544300826919"
-     crossorigin="anonymous"></script>
-<!-- e-drive storage -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:200px;height:300px"
-     data-ad-client="ca-pub-5125544300826919"
-     data-ad-slot="7557581427"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<?php
+echo ' </ul>';
+
+$fAdsV = $url."ads/vertical.txt";
+$fileV = fopen($fAdsV, "r");
+while(!feof($fileV)) {
+  $lineV = fgets($fileV);
+  echo $lineV . "<br>";
+}
+fclose($fileV);
+
 echo '</nav> </div>     </aside>';
 
 }
