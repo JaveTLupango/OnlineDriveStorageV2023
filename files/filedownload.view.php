@@ -89,6 +89,10 @@ else{
       {
         include 'layout/trash_file.view.php';
       }
+      elseif(strtoupper($data) === "LISTOFFILES")
+      {
+        include 'layout/data_file_non_user.view.php';
+      }
       elseif(strtoupper($data) === "PAGENOTFOUND")
       {
         include 'layout/pagenotfound.view.php';
