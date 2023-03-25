@@ -23,7 +23,6 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>File Name</th>
                     <th>File Type</th>
                     <th>Size</th>
@@ -48,8 +47,16 @@
                             $count++;
                             ?>
                                  <tr>
-                                      <td><?php echo $count ?></td>
-                                      <td><?php echo $row["filename"] ?></td>
+                                      <td><?php 
+                                      if(strlen($row["filename"]) > 25)
+                                      {
+                                       echo substr($row["filename"],0,25). "...";
+                                      }
+                                      else
+                                      {
+                                       echo $row["filename"];
+                                      }
+                                       ?></td>
                                       <td><?php echo $row["filetype"] ?></td>
                                       <td> <?php echo $C_FIC->FileSizeValidator( $row["filesize"])?></td>
                                       <td><?php echo $row["tdt"] ?></td>

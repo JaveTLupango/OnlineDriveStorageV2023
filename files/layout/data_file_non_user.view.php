@@ -37,8 +37,7 @@
                         try{
                           
                           //include '../https/config/conn.php';
-                          //$C_Con = new ClassConnection();
-                          
+                          //$C_Con = new ClassConnection();                          
                           //$conn = $C_Con->f_connection();
 
                           $listOfData =  $C_FIC->getListofAllFiles($conn, $_SESSION["userid"]);
@@ -47,8 +46,16 @@
                           {
                             $count++;
                             ?>
-                                 <tr>
-                                      <td><?php echo $row["filename"] ?></td>
+                                 <tr><td><?php echo $count ?></td>
+                                      <td><?php if(strlen($row["filename"]) > 25)
+                                       {
+                                        echo substr($row["filename"],0,25). "...";
+                                       }
+                                       else
+                                       {
+                                        echo $row["filename"];
+                                       }
+                                        ?></td>
                                       <td><?php echo $row["filetype"] ?></td>
                                       <td><?php echo $row["userFullName"] ?></td>
                                       <td> <?php echo $C_FIC->FileSizeValidator( $row["filesize"])?></td>

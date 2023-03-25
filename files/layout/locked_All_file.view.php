@@ -44,7 +44,15 @@
                           {
                             ?>
                                  <tr>
-                                      <td><?php echo $row["filename"] ?></td>
+                                      <td><?php  if(strlen($row["filename"]) > 25)
+                                       {
+                                        echo substr($row["filename"],0,25). "...";
+                                       }
+                                       else
+                                       {
+                                        echo $row["filename"];
+                                       }
+                                        ?></td>
                                       <td><?php echo $row["filetype"] ?></td>
                                       <td> <?php echo $C_FIC->FileSizeValidator( $row["filesize"])?></td>
                                       <td><?php echo $row["udt"] ?></td>

@@ -165,7 +165,7 @@ if(isset($_SESSION['userid']))
                     <div class="card">
                         <div class="card-body">
                                 <?php
-                                include("../ads/square.php");
+                                include("../ads/square.txt");
                               ?>
                         </div>
                     </div>
