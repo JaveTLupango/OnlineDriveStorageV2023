@@ -111,13 +111,7 @@ echo $asidebar;
 <?php
 echo ' </ul>';
 
-$fAdsV = $url."ads/vertical.txt";
-$fileV = fopen($fAdsV, "r");
-while(!feof($fileV)) {
-  $lineV = fgets($fileV);
-  echo $lineV . "<br>";
-}
-fclose($fileV);
+include("../ads/vertical.php");
 
 echo '</nav> </div>     </aside>';
 

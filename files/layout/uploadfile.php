@@ -108,13 +108,7 @@ if(!isset($_SESSION['userid']))
                     <div class="card">
                         <div class="card-body">
                            <?php
-                                $fileAdsName = $url."ads/horizontal.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                                include("../ads/horizontal.php");
                            ?>
                         </div>
                     </div>
@@ -137,24 +131,12 @@ if(!isset($_SESSION['userid']))
                   <div class="row">
                         <div class=" col-6">
                         <?php
-                                $fileAdsName = $url."ads/horizontal.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                              include("../ads/horizontal.php");
                            ?>
                         </div>
                         <div class=" col-6">
                                 <?php
-                                $fileAdsName = $url."ads/horizontal.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                              include("../ads/horizontal.php");
                            ?>
                         </div>
                             

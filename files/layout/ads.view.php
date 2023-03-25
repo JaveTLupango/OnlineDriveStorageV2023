@@ -44,13 +44,7 @@
                 <div class="card">                  
                   <div class="card-body">
                   <?php
-                                $fileAdsName = $url."ads/horizontal.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                         include("../ads/horizontal.php");
                            ?>
                   </div>
                 </div>
@@ -100,13 +94,7 @@
                 <div class="card">                  
                   <div class="card-body">
                   <?php
-                                $fileAdsName = $url."ads/vertical.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                                include("../ads/vertical.php");
                            ?>
                   </div>
                 </div>
@@ -156,13 +144,7 @@
                 <div class="card">                  
                   <div class="card-body">
                   <?php
-                                $fileAdsName = $url."ads/horizontal.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                          include("../ads/horizontal.php");
                            ?>
                   </div>
                 </div>
@@ -212,13 +194,7 @@
                 <div class="card">                  
                   <div class="card-body">
                             <?php
-                                $fileAdsName = $url."ads/square.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                                include("../ads/square.php");
                            ?>
                   </div>
                 </div>
@@ -241,24 +217,12 @@
                   <div class="row">
                             <div class=" col-6">
                             <?php
-                                    $fileAdsName = $url."ads/horizontal.txt";
-                                    $file = fopen($fileAdsName, "r");
-                                    while(!feof($file)) {
-                                      $line = fgets($file);
-                                      echo $line . "<br>";
-                                    }
-                                    fclose($file);
+                                   include("../ads/horizontal.php");
                               ?>
                             </div>
                             <div class=" col-6">
                             <?php
-                                    $fileAdsName = $url."ads/horizontal.txt";
-                                    $file = fopen($fileAdsName, "r");
-                                    while(!feof($file)) {
-                                      $line = fgets($file);
-                                      echo $line . "<br>";
-                                    }
-                                    fclose($file);
+                                    include("../ads/horizontal.php");
                               ?>
                             </div>
                                 

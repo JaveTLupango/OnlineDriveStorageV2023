@@ -110,13 +110,7 @@ else
                 <div class="card">                  
                   <div class="card-body">
                   <?php
-                                $fileAdsName = $url."ads/horizontal.txt";
-                                $file = fopen($fileAdsName, "r");
-                                while(!feof($file)) {
-                                  $line = fgets($file);
-                                  echo $line . "<br>";
-                                }
-                                fclose($file);
+                              include("../ads/horizontal.php");
                            ?>
                   </div>
                 </div>
