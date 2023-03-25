@@ -55,7 +55,6 @@
                                       <td><?php echo $row["tdt"] ?></td>
                                       <td> <?php echo $row["downloads"] ?></td>
                                       <td>
-                                          <!-- <button class="btn btn-warning" onclick="file_edit(<?php echo $row['id'] ?>)" title="Get Link Here."><i class="fa fa-edit" aria-hidden="true"></i></button> -->
                                           <button class="btn btn-primary" onclick="file_download(<?php echo $row['id'] ?>)" title="Download here."><i class="fa fa-download" aria-hidden="true"></i></button>
                                           <button class="btn btn-danger" onclick="file_Delete(<?php echo $row['id'] ?>)" title="Delete here"><i class="fa fa-trash" aria-hidden="true"></i> </button>
                                           <button class="btn btn-info" onclick="file_sharedLink(<?php echo $row['id'] ?>)" title="Get Shared Link Here."><i class="fa fa-link" aria-hidden="true"></i> </button>                    
@@ -199,7 +198,7 @@
           },
           error:function(b)
           {
-
+            
           }
           });
       }

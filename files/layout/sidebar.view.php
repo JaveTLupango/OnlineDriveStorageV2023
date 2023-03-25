@@ -59,6 +59,14 @@ echo $asidebar;
     </p>
   </a>
 </li>
+<li class="nav-item has-treeview">
+          <a href="<?php echo $url.'file_uploads/lockedfiles'?>" class="nav-link">
+            <i class="nav-icon fas fa-trash"></i>
+            <p>
+              Locked Files
+            </p>
+          </a>
+        </li>
 <?php
     $varUserType = $C_FIC->getUserTotalFileUpdateSize($conn, "Select usertype FROM file_users WHERE userid = '".$_SESSION['userid']."'", "usertype");
     if($varUserType == 1)
@@ -78,15 +86,7 @@ echo $asidebar;
               Deleted Files
             </p>
           </a>
-        </li>      
-        <li class="nav-item has-treeview">
-          <a href="<?php echo $url.'file_uploads/listoffiles'?>" class="nav-link">
-            <i class="nav-icon fas fa-trash"></i>
-            <p>
-              Locked Files
-            </p>
-          </a>
-        </li>
+        </li>              
         <li class="nav-item has-treeview">
         <a href="<?php echo $url.'file_uploads/ads'?>" class="nav-link">
           <i class="nav-icon fas fa-trash"></i>

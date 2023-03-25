@@ -91,6 +91,21 @@ if(strtoupper($data) === "DOWNLOAD" && strtoupper($data) === "LINK")
       {
         include 'layout/profile.view.php';
       }
+      elseif(strtoupper($data) === "FILE")
+      {
+        include 'layout/data_file.view.php';
+      }
+      elseif(strtoupper($data) === "LOCKEDFILES")
+      {        
+        if($varUserType == 1)
+        {
+          include 'layout/locked_All_file.view.php';
+        }
+        else
+        {
+          include 'layout/pagenotfound.view.php';
+        }
+      }
       elseif(strtoupper($data) === "LISTOFFILES")
       {        
         if($varUserType == 1)
@@ -126,7 +141,7 @@ if(strtoupper($data) === "DOWNLOAD" && strtoupper($data) === "LINK")
         
       }else
       {
-        include 'layout/data_file.view.php';
+        include 'layout/pagenotfound.view.php';
       }
     ?>
     <!-- /.content -->

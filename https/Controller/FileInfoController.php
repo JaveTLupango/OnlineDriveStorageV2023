@@ -53,8 +53,8 @@ class FileInfoController
     function getListofAllFiles($conn,$uid)
     {
         try {
-            $sql = "SELECT B.userFullName, B.email, A.filename, A.filetype, A.filesize, A.downloads, A.tdt, A.status, A.locked FROM file_server A LEFT JOIN file_users B on A.userid = B.userid
-            WHERE A.status = 1 and A.locked = 0 Order by A.id desc";
+            $sql = "SELECT A.id, B.userFullName, B.email, A.filename, A.filetype, A.filesize, A.downloads, A.tdt, A.status, A.locked FROM file_server A LEFT JOIN file_users B on A.userid = B.userid
+            WHERE A.status = 1 and A.locked = 0  Order by A.id desc";
             $stmt = $conn->query($sql)->fetchAll();
 		    return  $stmt;
         }
@@ -76,6 +76,33 @@ class FileInfoController
 			return "Failed " .$e->getMessage();
 		}
     }
+
+    function getListofLockedFilesByUserID($conn,$uid)
+    {
+        try {
+            $sql = "SELECT * FROM `file_server` WHERE userid ='$uid' and locked = 1 Order by id desc";
+            $stmt = $conn->query($sql)->fetchAll();
+		    return  $stmt;
+        }
+		catch (Exception $e)
+		{			
+			return "Failed " .$e->getMessage();
+		}
+    }
+
+    function getListofLockedFiles($conn)
+    {
+        try {
+            $sql = "SELECT * FROM `file_server` WHERE locked = 1 Order by id desc";
+            $stmt = $conn->query($sql)->fetchAll();
+		    return  $stmt;
+        }
+		catch (Exception $e)
+		{			
+			return "Failed " .$e->getMessage();
+		}
+    }
+
     function getListofTrashFile($conn)
     {
         try {

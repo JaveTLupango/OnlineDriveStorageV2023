@@ -1,20 +1,4 @@
 <?php
-// $FI_C = new FileInfoController();
-// $ret = $FI_C->getFileInfo($conn, strtoupper($linkID));
-// //echo $ret;
-// //$d_json = json_decode($ret);
-// foreach($ret as $row)
-//     $id = $row['id'];
-//     $base64Stringph = $url.''.$row['fileLoc'];
-//     $fileName = $row['filename'];
-//     $filesize= $row['filesize'];
-//     $tdt= $row['tdt'];
-//     $downloadNo = $row['downloads'];
-//     $ext = $row['file_ext'];
-//     $fileType = $row['filetype'];
-//     $status = $row['status'];
-//     $filedescription = $row['filedescription'];
-//echo "_______". $d_json[0];
 
 if(strpos($fileType, "image") !== false)
 {
@@ -91,19 +75,40 @@ else
                                                               Downloads: <strong><?php echo $downloadNo; ?></strong>
                                               </p>                                
                                       </div> 
-                                      <div id="btn_link" >
-                                        
-                                      </div>
-                                      <div id="btn_link1" class="invisible">
-                                          <a href="<?php echo $base64Stringph; ?>" style="width:300px;" download="<?php echo $fileName; ?>" 
-                                            onclick="UpdateDownload(<?php echo $id;?>)" class="btn btn-lg btn-block btn-success">
-                                              <i class="fa fa-download fa-fw"></i> 
-                                              <span class="dwnin">Ready to Download</span> 
-                                              <i class="fa fa-download fa-fw"></i>
-                                            </a>    
-                                      </div>
-                                      <p>File Description: <?php echo $filedescription; ?></p>
-                                        <!-- -->
+                                      <?php
+                                        if($filelocked == 0 && $filestatus == 1)
+                                        {?>
+                                          <div id="btn_link" >                                        
+                                          </div>                                      
+                                          <div id="btn_link1" class="invisible">
+                                              <a href="<?php echo $base64Stringph; ?>" style="width:300px;" download="<?php echo $fileName; ?>" 
+                                                onclick="UpdateDownload(<?php echo $id;?>)" class="btn btn-lg btn-block btn-success">
+                                                  <i class="fa fa-download fa-fw"></i> 
+                                                  <span class="dwnin">Ready to Download</span> 
+                                                  <i class="fa fa-download fa-fw"></i>
+                                                </a>    
+                                          </div>    
+                                          <label>File Description: <?php echo $filedescription; ?></label>
+                                          <!-- -->
+                                        <?php 
+                                        }
+                                        else
+                                        {
+                                          if($filelocked == 0)
+                                          {
+                                            ?>                                          
+                                          <label style="color: red;">File Description: This file is in locked mode.</label>
+                                            <?php                                           
+                                          }
+                                          else
+                                          {
+                                            ?>                                            
+                                          <label style="color: red;">File Description: This file is deleted.</label>
+                                            <?php
+                                          }
+                                        }
+                                      ?>
+                                      
                               </div>
                   </div>
                 </div>
