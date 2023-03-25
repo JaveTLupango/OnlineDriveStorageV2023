@@ -17,7 +17,8 @@ if( strtoupper($data) === "LINK")
         $fileType = $row['filetype'];
         $status = $row['status'];
         $filedescription = $row['filedescription'];
-
+        $filestatus = $row['status'];
+        $filelocked = $row['locked'];
         $titleHeader = $fileName;
 }
 else{
