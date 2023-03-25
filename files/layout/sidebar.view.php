@@ -72,7 +72,7 @@ echo $asidebar;
           </a>
         </li>        
         <li class="nav-item has-treeview">
-          <a href="<?php echo $url.'file_uploads/listoffiles'?>" class="nav-link">
+          <a href="<?php echo $url.'file_uploads/listofdeletedfiles'?>" class="nav-link">
             <i class="nav-icon fas fa-trash"></i>
             <p>
               Deleted Files

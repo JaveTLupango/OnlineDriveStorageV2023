@@ -76,6 +76,18 @@ class FileInfoController
 			return "Failed " .$e->getMessage();
 		}
     }
+    function getListofTrashFile($conn)
+    {
+        try {
+            $sql = "SELECT * FROM `file_server` WHERE status = 0 Order by id desc";
+            $stmt = $conn->query($sql)->fetchAll();
+		    return  $stmt;
+        }
+		catch (Exception $e)
+		{			
+			return "Failed " .$e->getMessage();
+		}
+    }
 
     function getUserTotalFileUpdateSize($conn, $sql, $val1)
     {

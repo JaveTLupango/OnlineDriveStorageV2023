@@ -62,6 +62,21 @@ class FileUploadController
 		}
 	}
 
+	function func_RestoreFile($conn, $id)
+	{
+		try
+		{    $now = new DateTime();
+			$dttime = $now->format('Y-m-d H:i:s');
+			$sql = "UPDATE file_server SET status = 1, statusDate = '$dttime' WHERE id = '$id'";
+			$conn->exec($sql);
+			return "success";
+		}
+		catch(exception $ex)
+		{
+			return "Failed to login " .$ex->getMessage();
+		}
+	}
+
 	function func_UpdateDownloadCountFile($conn, $id)
 	{
 		try

@@ -92,8 +92,26 @@ if(strtoupper($data) === "DOWNLOAD" && strtoupper($data) === "LINK")
         include 'layout/profile.view.php';
       }
       elseif(strtoupper($data) === "LISTOFFILES")
+      {        
+        if($varUserType == 1)
+        {
+          include 'layout/data_file_non_user.view.php';
+        }
+        else
+        {
+          include 'layout/pagenotfound.view.php';
+        }
+      }
+      elseif(strtoupper($data) === "LISTOFDELETEDFILES")
       {
-        include 'layout/data_file_non_user.view.php';
+        if($varUserType == 1)
+        {
+          include 'layout/trash_All_file.view.php';
+        }
+        else
+        {
+          include 'layout/pagenotfound.view.php';
+        }       
       }
       elseif(strtoupper($data) === "ADS")
       {
