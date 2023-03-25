@@ -63,6 +63,30 @@ echo $asidebar;
     $varUserType = $C_FIC->getUserTotalFileUpdateSize($conn, "Select usertype FROM file_users WHERE userid = '".$_SESSION['userid']."'", "usertype");
     if($varUserType == 1)
     { ?>
+      <li class="nav-item has-treeview">
+          <a href="<?php echo $url.'file_uploads/listoffiles'?>" class="nav-link">
+            <i class="nav-icon fas fa-trash"></i>
+            <p>
+              List All Files
+            </p>
+          </a>
+        </li>        
+        <li class="nav-item has-treeview">
+          <a href="<?php echo $url.'file_uploads/listoffiles'?>" class="nav-link">
+            <i class="nav-icon fas fa-trash"></i>
+            <p>
+              Deleted Files
+            </p>
+          </a>
+        </li>      
+        <li class="nav-item has-treeview">
+          <a href="<?php echo $url.'file_uploads/listoffiles'?>" class="nav-link">
+            <i class="nav-icon fas fa-trash"></i>
+            <p>
+              Locked Files
+            </p>
+          </a>
+        </li>
         <li class="nav-item has-treeview">
         <a href="<?php echo $url.'file_uploads/ads'?>" class="nav-link">
           <i class="nav-icon fas fa-trash"></i>

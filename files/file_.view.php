@@ -91,6 +91,10 @@ if(strtoupper($data) === "DOWNLOAD" && strtoupper($data) === "LINK")
       {
         include 'layout/profile.view.php';
       }
+      elseif(strtoupper($data) === "LISTOFFILES")
+      {
+        include 'layout/data_file_non_user.view.php';
+      }
       elseif(strtoupper($data) === "ADS")
       {
         if($varUserType == 1)
