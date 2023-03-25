@@ -108,7 +108,7 @@ if(!isset($_SESSION['userid']))
                     <div class="card">
                         <div class="card-body">
                            <?php
-                                include("../ads/horizontal.php");
+                                include("../ads/horizontal.txt");
                            ?>
                         </div>
                     </div>
@@ -131,12 +131,12 @@ if(!isset($_SESSION['userid']))
                   <div class="row">
                         <div class=" col-6">
                         <?php
-                              include("../ads/horizontal.php");
+                              include("../ads/horizontal.txt");
                            ?>
                         </div>
                         <div class=" col-6">
                                 <?php
-                              include("../ads/horizontal.php");
+                              include("../ads/horizontal.txt");
                            ?>
                         </div>
                             

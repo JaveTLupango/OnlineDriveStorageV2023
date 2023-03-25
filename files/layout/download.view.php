@@ -110,7 +110,7 @@ else
                 <div class="card">                  
                   <div class="card-body">
                   <?php
-                              include("../ads/horizontal.php");
+                              include("../ads/horizontal.txt");
                            ?>
                   </div>
                 </div>

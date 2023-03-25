@@ -94,7 +94,7 @@
                 <div class="card">                  
                   <div class="card-body">
                   <?php
-                                include("../ads/vertical.php");
+                                include("../ads/vertical.txt");
                            ?>
                   </div>
                 </div>
@@ -144,7 +144,7 @@
                 <div class="card">                  
                   <div class="card-body">
                   <?php
-                          include("../ads/horizontal.php");
+                          include("../ads/horizontal.txt");
                            ?>
                   </div>
                 </div>
@@ -194,7 +194,7 @@
                 <div class="card">                  
                   <div class="card-body">
                             <?php
-                                include("../ads/square.php");
+                                include("../ads/square.txt");
                            ?>
                   </div>
                 </div>
@@ -217,12 +217,12 @@
                   <div class="row">
                             <div class=" col-6">
                             <?php
-                                   include("../ads/horizontal.php");
+                                   include("../ads/horizontal.txt");
                               ?>
                             </div>
                             <div class=" col-6">
                             <?php
-                                    include("../ads/horizontal.php");
+                                    include("../ads/horizontal.txt");
                               ?>
                             </div>
                                 

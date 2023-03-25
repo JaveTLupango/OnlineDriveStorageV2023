@@ -111,7 +111,7 @@ echo $asidebar;
 <?php
 echo ' </ul>';
 
-include("../ads/vertical.php");
+include("../ads/vertical.txt");
 
 echo '</nav> </div>     </aside>';
 
@@ -149,13 +149,7 @@ else
           <ul>
           <?php 
           
-              $fAdsV = $url."ads/vertical.txt";
-              $fileV = fopen($fAdsV, "r");
-              while(!feof($fileV)) {
-                $lineV = fgets($fileV);
-                echo $lineV . "<br>";
-              }
-              fclose($fileV);
+include("../ads/vertical.txt");
           ?>
           </ul>
         </nav> </div>     </aside> 
