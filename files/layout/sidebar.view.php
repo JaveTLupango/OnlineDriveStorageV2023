@@ -1,10 +1,8 @@
 <?php 
 if(isset($_SESSION['userid']))
 {
-  $sql = "SELECT sum(filesize) as filesize FROM `file_server` WHERE userid = '".$_SESSION['userid']."'";
-  $totalbit = $C_FIC->getUserTotalFileUpdateSize($conn, $sql, "filesize");
+  $totalbit = $C_FIC->getUserTotalFileUpdateSizeV3($conn, $_SESSION['userid']);
   $totalSizeString = $C_FIC->FileSizeValidator($totalbit);
-
   $gb20 = 1050625000 * 10;
   $pec = ((100 * $totalbit) / $gb20);
   $remainingFreeStorage = $gb20 - $totalbit;
@@ -24,7 +22,7 @@ if(isset($_SESSION['userid']))
   '</div>'.
   '<div class="info">'.
     '<a href="'. $url.'file_uploads/profile" class="d-block">'
-    .$C_FIC->getUserTotalFileUpdateSize($conn, "Select userFullName FROM file_users WHERE userid = '".$_SESSION['userid']."'", "userFullName").
+    .$C_FIC->getUserTotalFileUpdateSizeV2($conn, "Select userFullName FROM file_users WHERE userid = '".$_SESSION['userid']."'", "userFullName").
     '</a>'.
   '</div>'.
 '</div>'. 
@@ -68,7 +66,7 @@ echo $asidebar;
           </a>
         </li>
 <?php
-    $varUserType = $C_FIC->getUserTotalFileUpdateSize($conn, "Select usertype FROM file_users WHERE userid = '".$_SESSION['userid']."'", "usertype");
+    $varUserType = $C_FIC->getUserTotalFileUpdateSizeV2($conn, "Select usertype FROM file_users WHERE userid ='".$_SESSION['userid']."'", "usertype");
     if($varUserType == 1)
     { ?>
       <li class="nav-item has-treeview">

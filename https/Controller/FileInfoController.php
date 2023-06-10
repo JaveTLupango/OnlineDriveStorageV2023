@@ -126,6 +126,50 @@ class FileInfoController
 		array_push($data,$user);	
 		return $data[0]["".$val1.""];  
     }
+    
+    function getUserTotalFileUpdateSizeV2($conn, $sql, $val1)
+    {
+        //$sql = "SELECT sum(filesize) as filesize FROM `file_server` WHERE userid = '".$param."'";
+        // $stmt = $conn->prepare($sql);
+        // $stmt->bindParam('userid', $param, PDO::PARAM_STR);
+		// $stmt->execute([$val1]); 
+		// $user = $stmt->fetch();
+		// $data = array();
+		// array_push($data,$user);	
+		// return $data[0]["".$val1.""] ??= 'Error';  
+        try {
+            $stmt = $conn->query($sql)->fetchAll();
+		    return  $stmt[0]["".$val1.""];
+        }
+		catch (Exception $e)
+		{			
+			return "Failed " .$e->getMessage();
+		}
+    }
+
+    function getUserTotalFileUpdateSizeV3($conn, $param)
+    {
+        $sql = "SELECT sum(filesize) as filesize FROM `file_server` WHERE userid = 'FU2021941630764928'";
+        // $stmt = $conn->prepare($sql);
+        // $stmt->bindParam('userid', $param, PDO::PARAM_STR);
+		// $stmt->execute(["filesize"]);         
+        // $count = $stmt->rowCount();
+		// $row    = $stmt->fetch(PDO::FETCH_ASSOC);
+		// $data = array();
+		// array_push($data,$row );	
+		// return $data[0]["filesize"];  
+        try {
+            $stmt = $conn->query($sql)->fetchAll();
+		    return  $stmt[0]["filesize"];
+        }
+		catch (Exception $e)
+		{			
+			return "Failed " .$e->getMessage();
+		}
+
+    }
+    
+
     function getUserRole($conn, $sql, $val1)
     {
         //$sql = "SELECT sum(filesize) as filesize FROM `file_server` WHERE userid = 'FU2021941630764928'";
